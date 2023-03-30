@@ -1,0 +1,47 @@
+function calculateWaterIntake() {
+  const gender = document.getElementById('gender').value;
+  const age = document.getElementById('age').value;
+  const weight = document.getElementById('weight').value;
+  const weather = document.getElementById('weather').value;
+  const activity = document.getElementById('activity').value;
+  let baseIntake;
+  let tempAdjustment = 0;
+  let activityAdjustment = 0;
+
+  if (!weight) {
+    alert('Please enter your weight');
+    return;
+  }
+
+  if (gender === 'male') {
+    baseIntake = weight * 0.035;
+  } else {
+    baseIntake = weight * 0.031;
+  }
+
+  if (age < 30) {
+    baseIntake *= 1.2;
+  } else if (age < 55) {
+    baseIntake *= 1;
+  } else {
+    baseIntake *= 0.8;
+  }
+
+  if (weather === 'hot') {
+    tempAdjustment = 0.4;
+  } else if (weather === 'cold') {
+    tempAdjustment = -0.2;
+  }
+
+  if (activity === 'low') {
+    activityAdjustment = 0;
+  } else if (activity === 'moderate') {
+    activityAdjustment = 0.2;
+  } else {
+    activityAdjustment = 0.4;
+  }
+
+  const totalIntake = baseIntake + tempAdjustment + activityAdjustment;
+
+  document.getElementById('result').innerHTML = `Recommended water intake: ${totalIntake.toFixed(2)} liters per day`;
+}
