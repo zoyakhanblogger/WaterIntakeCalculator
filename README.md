@@ -1,5 +1,5 @@
 # WaterIntakeCalculator
-You can calculate the amount of water for body needs depending on your age, gender, weather conditions and activity level. This code is developed by Zoya from https://trackacpl.in/
+You can calculate the amount of water for body needs depending on your age, gender, weather conditions and activity level.
 This PHP code calculates the recommended daily water intake based on age, gender, weather conditions, and activity level. It uses a base daily water intake of 2500 ml and adds additional water intake based on the factors mentioned above.
 
 Usage
